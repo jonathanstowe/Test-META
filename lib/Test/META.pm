@@ -11,7 +11,7 @@ module Test::META:ver<v0.0.1>:auth<github:jonathanstowe> {
 
             my $meta-file = get-meta();
 
-            if $meta-file.defined and $meta-file.d {
+            if $meta-file.defined and $meta-file.e {
                 pass "have a META file";
                 my $meta;
                 lives-ok { $meta = META6.new(file => $meta-file) }, "META parses okay";
@@ -24,7 +24,7 @@ module Test::META:ver<v0.0.1>:auth<github:jonathanstowe> {
                 flunk "don't have META file";
             }
 
-        }
+        }, "Project META file is good";
     }
 
     our sub get-meta() {
