@@ -1,5 +1,57 @@
 use v6;
 
+=begin pod
+
+=head1 NAME
+
+Test::META - Test that a Perl 6 project has a good and proper META file
+
+=head1 SYNOPSIS
+
+This is the actual *t/030-my-meta.t* from this distribution
+
+=begin code
+#!perl6
+
+use v6;
+use lib 'lib';
+
+use Test;
+use Test::META;
+
+plan 1;
+
+# That's it
+meta-ok();
+
+
+done-testing;
+=end code
+
+=head1 DESCRIPTION
+
+This provides a simple mechanims for module authors to have some
+confidence that they have a working distribution META description
+file (as described in L<http://design.perl6.org/S22.html#META6.json>.)
+
+It exports one subroutine *meta-ok* that runs a single sub-test that
+checks that:
+
+=item The META file (either META6.json or META.info) exists
+
+=item That the META file can be parsed as valid JSON
+
+=item That the attributes marked as "mandatory" are present
+
+=item That the files mention in the "provides" section are present.
+
+There are mechanisms (used internally for testing,) to over-ride the
+location or name of the META file and these can be seen in the test-suite,
+though they won't typically be needed.
+
+=end pod
+
+
 module Test::META:ver<v0.0.1>:auth<github:jonathanstowe> {
 
     use Test;
