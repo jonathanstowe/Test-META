@@ -7,6 +7,8 @@ use Test;
 
 use Test::META;
 
+diag "the following may make some diagnostics from the module itself";
+
 lives-ok { Test::META::get-meta() }, "get-meta";
 
 {
