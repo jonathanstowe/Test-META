@@ -1,0 +1,32 @@
+{
+   "tags" : [
+      "devel",
+      "meta",
+      "utils",
+      "testing"
+   ],
+   "provides" : {
+      "Test::META" : "lib/Test/META.pm"
+   },
+   "test-depends" : [
+      "Test"
+   ],
+   "support" : {
+      "source" : "git://github.com/jonathanstowe/Test-META.git"
+   },
+   "perl" : "6",
+   "build-depends" : [],
+   "auth" : "github:jonathanstowe",
+   "source-url" : "git://github.com/jonathanstowe/Test-META.git",
+   "depends" : [
+      "Test",
+      "META6"
+   ],
+   "name" : "Test::META",
+   "authors" : [
+      "Jonathan Stowe <jns+git@gellyfish.co.uk>"
+   ],
+   "version" : "0.0.1",
+   "license" : "Artistic",
+   "description" : "Test a distributions META file"
+}
