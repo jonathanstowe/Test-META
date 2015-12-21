@@ -26,8 +26,8 @@ done-testing;
 
 
 However, you may want to make this test conditional, only run by the
-author (e.g. by checking the "TEST_AUTHOR" environment variable. Also,
-users will not have to habe Test::META on their system):
+author (e.g. by checking the "TEST_AUTHOR" environment variable). Also,
+regular users of your module will not need Test::META on their system):
 ```
 use v6;
 use lib 'lib';
