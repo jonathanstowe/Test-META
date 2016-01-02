@@ -54,7 +54,7 @@ though they won't typically be needed.
 module Test::META:ver<v0.0.1>:auth<github:jonathanstowe> {
 
     use Test;
-    use META6;
+    use META6:ver(v0.0.3..*);
 
     our $TESTING = False;
 
