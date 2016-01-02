@@ -43,6 +43,10 @@ lives-ok { Test::META::get-meta() }, "get-meta";
     nok Test::META::check-provides(META6.new(provides => ( 'HH::GG' => 'lib/Boodle',))), "check-provides with bogus provides";
     nok Test::META::check-provides(META6.new(provides => ('Test::META' => '/lib/Test/META.pm',))), "check-provides with my own files but absolute path";
     ok Test::META::check-provides(META6.new(provides => ('Test::META' => 'lib/Test/META.pm',))), "check-provides with my own files";
+    ok Test::META::check-authors(META6.new()), "check-authors no authors";
+    ok Test::META::check-authors(META6.new(authors => ["A.U. Thor"])), "check-authors with 'authors'";
+    ok Test::META::check-authors(META6.new(authors => ["A.U. Thor"], author => "A.U. Thor")), "check-authors with 'authors' and 'author'";
+    nok Test::META::check-authors(META6.new(author => "A.U. Thor")), "check-authors with 'author' only";
 }
 
 

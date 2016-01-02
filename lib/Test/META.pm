@@ -69,6 +69,7 @@ module Test::META:ver<v0.0.1>:auth<github:jonathanstowe> {
                 if $meta.defined {
                     ok check-mandatory($meta), "have all required entries";
                     ok check-provides($meta), "'provides' looks sane";
+                    ok check-authors($meta), "Optional 'authors' and not 'author'";
                 }
             }
             else {
@@ -119,6 +120,19 @@ module Test::META:ver<v0.0.1>:auth<github:jonathanstowe> {
             elsif $path.IO.is-absolute {
                 $rc = False;
                 diag "file for '$name' '$path' is absolute, it should be relative to the dist directory";
+            }
+        }
+
+        $rc;
+    }
+
+    our sub check-authors(META6:D $meta) returns Bool {
+        my Bool $rc = True;
+
+        if $meta.author.defined {
+            if $meta.authors.elems == 0 {
+                $rc = False;
+                diag "there is an 'author' field rather than the specified 'authors'";
             }
         }
 
