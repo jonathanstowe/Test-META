@@ -14,7 +14,6 @@ This is the actual *t/030-my-meta.t* from this distribution
 #!perl6
 
 use v6;
-use lib 'lib';
 
 use Test;
 use Test::META;
