@@ -41,6 +41,7 @@ lives-ok { Test::META::get-meta() }, "get-meta";
 {
     ok Test::META::check-provides(META6.new()), "check-provides on empty META";
     nok Test::META::check-provides(META6.new(provides => ( 'HH::GG' => 'lib/Boodle',))), "check-provides with bogus provides";
+    nok Test::META::check-provides(META6.new(provides => ('Test::META' => '/lib/Test/META.pm',))), "check-provides with my own files but absolute path";
     ok Test::META::check-provides(META6.new(provides => ('Test::META' => 'lib/Test/META.pm',))), "check-provides with my own files";
 }
 

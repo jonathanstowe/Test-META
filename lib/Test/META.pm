@@ -116,6 +116,10 @@ module Test::META:ver<v0.0.1>:auth<github:jonathanstowe> {
                 $rc = False;
                 diag "file for '$name' '$path' does not exist";
             }
+            elsif $path.IO.is-absolute {
+                $rc = False;
+                diag "file for '$name' '$path' is absolute, it should be relative to the dist directory";
+            }
         }
 
         $rc;
