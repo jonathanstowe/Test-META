@@ -56,6 +56,7 @@ module Test::META:ver<v0.0.1>:auth<github:jonathanstowe> {
     use Test;
     use META6;
 
+    our $TESTING = False;
 
     sub meta-ok() is export(:DEFAULT) {
         subtest {
@@ -101,7 +102,7 @@ module Test::META:ver<v0.0.1>:auth<github:jonathanstowe> {
                     if not $attr.get_value($meta).defined {
                         my $name = $attr.name.substr(2);
                         $rc = False;
-                        diag "required attribute '$name' is not defined";
+                        diag "required attribute '$name' is not defined" unless $TESTING;
                     }
                 }
             }
@@ -115,11 +116,11 @@ module Test::META:ver<v0.0.1>:auth<github:jonathanstowe> {
         for $meta.provides.kv -> $name, $path {
             if not dist-dir().child($path).e {
                 $rc = False;
-                diag "file for '$name' '$path' does not exist";
+                diag "file for '$name' '$path' does not exist" unless $TESTING;
             }
             elsif $path.IO.is-absolute {
                 $rc = False;
-                diag "file for '$name' '$path' is absolute, it should be relative to the dist directory";
+                diag "file for '$name' '$path' is absolute, it should be relative to the dist directory" unless $TESTING;
             }
         }
 
@@ -132,7 +133,7 @@ module Test::META:ver<v0.0.1>:auth<github:jonathanstowe> {
         if $meta.author.defined {
             if $meta.authors.elems == 0 {
                 $rc = False;
-                diag "there is an 'author' field rather than the specified 'authors'";
+                diag "there is an 'author' field rather than the specified 'authors'" unless $TESTING;
             }
         }
 

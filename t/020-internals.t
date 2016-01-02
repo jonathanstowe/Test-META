@@ -9,6 +9,8 @@ use Test::META;
 
 diag "the following may make some diagnostics from the module itself";
 
+$Test::META::TESTING = True;
+
 lives-ok { Test::META::get-meta() }, "get-meta";
 
 {
