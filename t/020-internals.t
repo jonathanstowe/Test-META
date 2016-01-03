@@ -49,6 +49,9 @@ lives-ok { Test::META::get-meta() }, "get-meta";
     ok Test::META::check-authors(META6.new(authors => ["A.U. Thor"])), "check-authors with 'authors'";
     ok Test::META::check-authors(META6.new(authors => ["A.U. Thor"], author => "A.U. Thor")), "check-authors with 'authors' and 'author'";
     nok Test::META::check-authors(META6.new(author => "A.U. Thor")), "check-authors with 'author' only";
+    ok Test::META::check-name(META6.new(name => "Test::META")), "check-name with good name";
+    nok Test::META::check-name(META6.new(name => "Test-META")), "check-name with bad name";
+    ok Test::META::check-name(META6.new(name => "Test-META"), :relaxed-name), "check-name with bad name but :relaxed-name";
 }
 
 

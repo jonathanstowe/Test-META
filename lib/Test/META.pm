@@ -44,6 +44,13 @@ checks that:
 
 =item That the files mention in the "provides" section are present.
 
+=item That the authors field is used instead of author
+
+=item That the name attribute doesn't have a hyphen rather than '::'
+
+The C<meta-ok> takes one optional adverb C<:relaxed-name> that can stop
+the name check being a fail if it is intended to be like that.
+
 There are mechanisms (used internally for testing,) to over-ride the
 location or name of the META file and these can be seen in the test-suite,
 though they won't typically be needed.
@@ -58,7 +65,7 @@ module Test::META:ver<0.0.2>:auth<github:jonathanstowe> {
 
     our $TESTING = False;
 
-    sub meta-ok() is export(:DEFAULT) {
+    sub meta-ok(:$relaxed-name) is export(:DEFAULT) {
         subtest {
 
             my $meta-file = get-meta();
@@ -71,6 +78,7 @@ module Test::META:ver<0.0.2>:auth<github:jonathanstowe> {
                     ok check-mandatory($meta), "have all required entries";
                     ok check-provides($meta), "'provides' looks sane";
                     ok check-authors($meta), "Optional 'authors' and not 'author'";
+                    ok check-name($meta, :$relaxed-name), "name has a hypen rather than '::' (if this is intentional please pass :relaxed-name to meta-ok)";
                 }
             }
             else {
@@ -135,6 +143,27 @@ module Test::META:ver<0.0.2>:auth<github:jonathanstowe> {
                 $rc = False;
                 diag "there is an 'author' field rather than the specified 'authors'" unless $TESTING;
             }
+        }
+
+        $rc;
+    }
+
+    our sub check-name(META6:D $meta, :$relaxed-name ) {
+        my Bool $rc = True;
+
+        if $meta.name.defined {
+            if not $relaxed-name {
+                 my Str $name = $meta.name;
+                 if so $name ~~ /\-/ && $name !~~ /\:\:/ {
+                     $rc = False;
+                 }
+            }
+            else {
+                $rc = True;
+            }
+        }
+        else {
+            $rc = False;
         }
 
         $rc;
