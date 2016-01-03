@@ -60,10 +60,10 @@ though they won't typically be needed.
 =end pod
 
 
-module Test::META:ver<0.0.2>:auth<github:jonathanstowe> {
+module Test::META:ver<0.0.3>:auth<github:jonathanstowe> {
 
     use Test;
-    use META6:ver(v0.0.3..*);
+    use META6:ver(v0.0.4..*);
 
     our $TESTING = False;
 
