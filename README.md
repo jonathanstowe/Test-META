@@ -32,13 +32,18 @@ regular users of your module will not need Test::META on their system):
 use v6;
 use lib 'lib';
 use Test;
+plan 1;
+
 constant AUTHOR = ?%*ENV<TEST_AUTHOR>; 
 
 if AUTHOR { 
 	require Test::META <&meta-ok>;
-	plan 1;
 	meta-ok;
 	done-testing;
+}
+else {
+     skip-rest "Skipping author test";
+     exit;
 }
 ```
 
