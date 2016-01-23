@@ -29,7 +29,7 @@ done-testing;
 
 =head1 DESCRIPTION
 
-This provides a simple mechanims for module authors to have some
+This provides a simple mechanism for module authors to have some
 confidence that they have a working distribution META description
 file (as described in L<http://design.perl6.org/S22.html#META6.json>.)
 
