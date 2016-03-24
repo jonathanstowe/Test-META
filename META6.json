@@ -14,7 +14,7 @@
    "support" : {
       "source" : "git://github.com/jonathanstowe/Test-META.git"
    },
-   "perl" : "6",
+   "perl" : "6.c",
    "build-depends" : [],
    "auth" : "github:jonathanstowe",
    "source-url" : "git://github.com/jonathanstowe/Test-META.git",
@@ -26,7 +26,7 @@
    "authors" : [
       "Jonathan Stowe <jns+git@gellyfish.co.uk>"
    ],
-   "version" : "0.0.3",
+   "version" : "0.0.4",
    "license" : "Artistic",
    "description" : "Test a distributions META file"
 }
