@@ -69,18 +69,7 @@ though they won't typically be needed.
 
 ## Installation
 
-Assuming you have a working perl6 installation you should be able to
-install this with *ufo* :
-
-    ufo
-    make test
-    make install
-
-*ufo* can be installed with *panda* for rakudo:
-
-    panda install ufo
-
-Or you can install directly with "panda":
+You can install directly with "panda":
 
     # From the source directory
    
@@ -90,13 +79,12 @@ Or you can install directly with "panda":
 
     panda install Test::META
 
-Other install mechanisms may be become available in the future.
+I haven't tested this with "zef" but I see no reason why it shouldn't
+work.
 
 ## Support
 
-This should be considered experimental software until such time that
-Perl 6 reaches an official release.  However suggestions/patches are
-welcomed via github at
+Suggestions/patches are welcomed via github at:
 
    https://github.com/jonathanstowe/Test-META
 
@@ -110,4 +98,4 @@ to consider changing that instead.
 
 Please see the LICENCE file in the distribution
 
-(C) Jonathan Stowe 2015
+(C) Jonathan Stowe 2015, 2016
