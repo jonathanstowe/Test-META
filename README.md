@@ -98,6 +98,6 @@ to consider changing that instead.
 
 ## Licence
 
-Please see the LICENCE file in the distribution
+Please see the [LICENSE](LICENSE)
 
 (C) Jonathan Stowe 2015, 2016
