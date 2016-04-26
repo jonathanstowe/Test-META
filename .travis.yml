@@ -1,10 +1,18 @@
-branches:
-  except:
-    - gh-pages
+sudo: required
+
 language: perl6
-sudo: false
+
+os:
+  - linux
+  - osx
+
 perl6:
+  - 2016.04
   - latest
+
 install:
-  - rakudobrew build-panda
+  - echo $TRAVIS_OS_NAME
+  - rakudobrew build panda
   - panda installdeps .
+
+script: prove -v -e "perl6 -Ilib" t/

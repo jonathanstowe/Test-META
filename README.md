@@ -1,12 +1,15 @@
 # Test::META
 
-Test that a Perl 6 project has a good and proper META file
+[![Build Status](https://travis-ci.org/jonathanstowe/Test-META.svg?branch=master)](https://travis-ci.org/jonathanstowe/Test-META)
+[![Build status](https://ci.appveyor.com/api/projects/status/github/jonathanstowe/Test-META?svg=true)](https://ci.appveyor.com/project/jonathanstowe/Test-META/branch/master)
+
+Test that a Perl 6 project has a good and proper META file.
 
 ## Synopsis
 
-This is the actual *t/030-my-meta.t* from this distribution
+This is the actual `t/030-my-meta.t` from this distribution
 
-```
+```Perl6
 #!perl6
 
 use v6;
@@ -26,9 +29,9 @@ done-testing;
 
 
 However, you may want to make this test conditional, only run by the
-author (e.g. by checking the "TEST_AUTHOR" environment variable). Also,
+author (e.g. by checking the `TEST_AUTHOR` environment variable). Also,
 regular users of your module will not need Test::META on their system):
-```
+```Perl6
 use v6;
 use lib 'lib';
 use Test;
@@ -37,9 +40,9 @@ plan 1;
 constant AUTHOR = ?%*ENV<TEST_AUTHOR>; 
 
 if AUTHOR { 
-	require Test::META <&meta-ok>;
-	meta-ok;
-	done-testing;
+    require Test::META <&meta-ok>;
+    meta-ok;
+    done-testing;
 }
 else {
      skip-rest "Skipping author test";
@@ -50,11 +53,11 @@ else {
 
 ## Description
 
-This provides a simple mechanims for module authors to have some
+This provides a simple mechanism for module authors to have some
 confidence that they have a working distribution META description
-file (as described in http://design.perl6.org/S22.html#META6.json .)
+file (as described in [S22](http://design.perl6.org/S22.html#META6.json)).
 
-It exports one subroutine *meta-ok* that runs a single sub-test that
+It exports one subroutine `meta-ok` that runs a single sub-test that
 checks that:
 
    *  The META file (either META6.json or META.info) exists
@@ -62,40 +65,39 @@ checks that:
    *  That the attributes marked as "mandatory" are present
    *  That the files mention in the "provides" section are present.
 
-There are mechanisms (used internally for testing,) to over-ride the
-location or name of the META file and these can be seen in the test-suite,
-though they won't typically be needed.
-
+There are mechanisms that are used internally for testing to override the
+location or name of the META file. These can be seen in the test suite
+though they are not typically needed.
 
 ## Installation
 
 You can install directly with "panda":
 
-    # From the source directory
-   
-    panda install .
+```
+# Remote installation
+$ panda install Test::META
 
-    # Remote installation
+# From the source directory
+$ panda install .
+```
 
-    panda install Test::META
-
-I haven't tested this with "zef" but I see no reason why it shouldn't
-work.
+I haven't tested this with [zef](https://github.com/ugexe/zef) but
+I see no reason why it should not work.
 
 ## Support
 
 Suggestions/patches are welcomed via github at:
 
-   https://github.com/jonathanstowe/Test-META
+https://github.com/jonathanstowe/Test-META
 
 If you can think of further tests that could be made, please send a
-patch.  Bear in mind that the tests for the stucture of the META file
+patch.  Bear in mind that the tests for the structure of the META file
 and particularly the required fields rely on the implementation of the
 module [META6](https://github.com/jonathanstowe/META6) and you may want
 to consider changing that instead.
 
 ## Licence
 
-Please see the LICENCE file in the distribution
+Please see the [LICENSE](LICENSE)
 
 (C) Jonathan Stowe 2015, 2016
