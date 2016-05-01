@@ -35,7 +35,7 @@ lives-ok { Test::META::get-meta() }, "get-meta";
 
 {
     nok Test::META::check-mandatory(META6.new()), "check-mandatory on empty META";
-    my $good = META6.new(perl => Version.new("6"), version => Version.new("0.0.1"), description => "Test thing", name => "Test::META");
+    my $good = META6.new(perl-version => Version.new("6"), version => Version.new("0.0.1"), description => "Test thing", name => "Test::META");
 
     ok Test::META::check-mandatory($good), "check-mandatory with all defined";
 }
