@@ -98,6 +98,6 @@ to consider changing that instead.
 
 ## Licence
 
-Please see the [LICENSE](LICENSE)
+Please see the [LICENCE](LICENCE)
 
 (C) Jonathan Stowe 2015, 2016
