@@ -100,4 +100,4 @@ to consider changing that instead.
 
 Please see the [LICENCE](LICENCE)
 
-(C) Jonathan Stowe 2015, 2016
+© Jonathan Stowe 2015, 2016
