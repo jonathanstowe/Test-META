@@ -1,10 +1,10 @@
 #!perl6
 
-use v6;
-use lib 'lib';
+use v6.c;
 
 use Test;
 
+use META6;
 use Test::META;
 
 diag "the following may make some diagnostics from the module itself";
