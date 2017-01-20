@@ -71,14 +71,14 @@ though they are not typically needed.
 
 ## Installation
 
-You can install directly with "panda":
+You can install directly with "zef":
 
 ```
 # Remote installation
-$ panda install Test::META
+$ zef install Test::META
 
 # From the source directory
-$ panda install .
+$ zef install .
 ```
 
 I haven't tested this with [zef](https://github.com/ugexe/zef) but
