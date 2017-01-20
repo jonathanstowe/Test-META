@@ -3,7 +3,7 @@ os: Visual Studio 2015
 platform: x64
 
 environment:
-        matrix:
+    matrix:
         - test_moar: 2016.11
         - test_moar: '' #latest
 
