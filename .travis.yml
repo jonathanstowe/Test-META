@@ -15,4 +15,6 @@ install:
   - rakudobrew build zef
   - zef --depsonly install .
 
-script: prove -v -e "perl6 -Ilib" t
+script:
+  - AUTHOR_TESTING=1 prove -v -e "perl6 -Ilib"
+  - zef install .
