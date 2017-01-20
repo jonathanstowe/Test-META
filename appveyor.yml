@@ -4,8 +4,8 @@ platform: x64
 
 environment:
     matrix:
-        - test_moar: 2016.11
-        - test_moar: '' #latest
+    - test_moar: 2016.11
+    - test_moar: '' #latest
 
 install:
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64'
