@@ -167,12 +167,13 @@ module Test::META:ver<0.0.7>:auth<github:jonathanstowe> {
         if $meta.license.defined {
             my @license-list = get-license-list();
             if $meta.license ne any(@license-list) {
-                if $meta.support.license {
-                    diag "notice license is “$meta.license()’, which isn't a SPDX standardized identifier, but license URL was supplied";
+                if $meta.license eq any('NOASSERTION', 'NONE') {
+                    diag "NOTICE! License is $meta.support.license(). This is valid, but licenses are prefered.";
                     return True;
                 }
-                else {
-                    say $meta.support.license.defined;
+                elsif $meta.support.license {
+                    diag "notice license is “$meta.license()’, which isn't a SPDX standardized identifier, but license URL was supplied";
+                    return True;
                 }
                 diag qq:to/END/;
                 license ‘$meta.license()’ is not one of the standardized SPDX license identifiers.
