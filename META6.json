@@ -6,7 +6,8 @@
       "testing"
    ],
    "provides" : {
-      "Test::META" : "lib/Test/META.pm"
+      "Test::META" : "lib/Test/META.pm",
+      "Test::META::LicenseList" : "lib/Test/META/LicenseList.pm6"
    },
    "test-depends" : [
       "Test"
@@ -27,6 +28,6 @@
       "Jonathan Stowe <jns+git@gellyfish.co.uk>"
    ],
    "version" : "0.0.8",
-   "license" : "Artistic",
+   "license" : "Artistic-2.0",
    "description" : "Test a distributions META file"
 }
