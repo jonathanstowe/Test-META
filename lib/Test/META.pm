@@ -64,7 +64,7 @@ module Test::META:ver<0.0.7>:auth<github:jonathanstowe> {
 
     use Test;
     use META6:ver(v0.0.4..*);
-
+    use Test::META::LicenseList;
     our $TESTING = False;
 
     sub meta-ok(:$relaxed-name) is export(:DEFAULT) {
@@ -91,7 +91,8 @@ module Test::META:ver<0.0.7>:auth<github:jonathanstowe> {
                     ok check-mandatory($meta), "have all required entries";
                     ok check-provides($meta), "'provides' looks sane";
                     ok check-authors($meta), "Optional 'authors' and not 'author'";
-                    ok check-name($meta, :$relaxed-name), "name has a hyphen rather than '::' (if this is intentional please pass :relaxed-name to meta-ok)";
+                    ok check-license($meta), "License is correct";
+                    ok check-name($meta, :$relaxed-name), "name has a hypen rather than '::' (if this is intentional please pass :relaxed-name to meta-ok)";
                     ok $meta.meta6 eq Version.new(0) ?? True !! $seen-vee == 0, "no 'v' in version strings (meta6 version greater than 0)";
                 }
             }
@@ -160,6 +161,30 @@ module Test::META:ver<0.0.7>:auth<github:jonathanstowe> {
         }
 
         $rc;
+    }
+
+    our sub check-license(META6:D $meta) returns Bool {
+        if $meta.license.defined {
+            my @license-list = get-license-list();
+            if $meta.license ne any(@license-list) {
+                if $meta.support.license {
+                    diag "notice license is “$meta.license()’, which isn't a SPDX standardized identifier, but license URL was supplied";
+                    return True;
+                }
+                else {
+                    say $meta.support.license.defined;
+                }
+                diag qq:to/END/;
+                license ‘$meta.license()’ is not one of the standardized SPDX license identifiers.
+                please use use one of the identifiers from https://spdx.org/licenses/
+                for the license field or if your license is not on the list,
+                include a URL to the license text as one of the 'support' keys
+                in addition to listing its name.
+                END
+                return False;
+            }
+        }
+        return True;
     }
 
     our sub check-name(META6:D $meta, :$relaxed-name ) {
