@@ -27,6 +27,6 @@
       "Jonathan Stowe <jns+git@gellyfish.co.uk>"
    ],
    "version" : "0.0.8",
-   "license" : "Artistic",
+   "license" : "Artistic-2.0",
    "description" : "Test a distributions META file"
 }
