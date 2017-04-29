@@ -1,32 +1,38 @@
 {
-   "tags" : [
-      "devel",
-      "meta",
-      "utils",
-      "testing"
-   ],
-   "provides" : {
-      "Test::META" : "lib/Test/META.pm"
-   },
-   "test-depends" : [
-      "Test"
-   ],
-   "support" : {
-      "source" : "git://github.com/jonathanstowe/Test-META.git"
-   },
-   "perl" : "6.c",
-   "build-depends" : [],
-   "auth" : "github:jonathanstowe",
-   "source-url" : "git://github.com/jonathanstowe/Test-META.git",
-   "depends" : [
-      "Test",
-      "META6"
-   ],
-   "name" : "Test::META",
-   "authors" : [
-      "Jonathan Stowe <jns+git@gellyfish.co.uk>"
-   ],
-   "version" : "0.0.8",
-   "license" : "Artistic",
-   "description" : "Test a distributions META file"
+  "name": "Test::META",
+  "source-url": "git://github.com/jonathanstowe/Test-META.git",
+  "support": {
+    "source": "git://github.com/jonathanstowe/Test-META.git"
+  },
+  "perl": "6.c",
+  "resources": [
+    
+  ],
+  "build-depends": [
+    
+  ],
+  "auth": "github:jonathanstowe",
+  "depends": [
+    "Test",
+    "META6"
+  ],
+  "tags": [
+    "devel",
+    "meta",
+    "utils",
+    "testing"
+  ],
+  "license": "Artistic-2.0",
+  "test-depends": [
+    "Test"
+  ],
+  "provides": {
+    "Test::META": "lib/Test/META.pm"
+  },
+  "version": "0.0.8",
+  "authors": [
+    "Jonathan Stowe <jns+git@gellyfish.co.uk>"
+  ],
+  "description": "Test a distributions META file",
+  "meta6": "0"
 }
