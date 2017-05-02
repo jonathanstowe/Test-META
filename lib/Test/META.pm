@@ -53,7 +53,7 @@ checks that:
 The C<meta-ok> takes one optional adverb C<:relaxed-name> that can stop
 the name check being a fail if it is intended to be like that.
 
-There are mechanisms (used internally for testing,) to over-ride the
+There are mechanisms (used internally for testing) to over-ride the
 location or name of the META file and these can be seen in the test-suite,
 though they won't typically be needed.
 
