@@ -38,22 +38,22 @@ checks that:
 
 =item The META file (either META6.json or META.info) exists
 
-=item That the META file can be parsed as valid JSON
+=item The META file can be parsed as valid JSON
 
-=item That the attributes marked as "mandatory" are present
+=item The attributes marked as "mandatory" are present
 
-=item That the files mention in the "provides" section are present.
+=item The files mention in the "provides" section are present.
 
-=item That the authors field is used instead of author
+=item The authors field is used instead of author
 
-=item That the name attribute doesn't have a hyphen rather than '::'
+=item The name attribute doesn't have a hyphen rather than '::'
 
-=item That if the META6 file specifies a meta6 version greater than 0 that the version strings do not contain a 'v' prefix
+=item If the META6 file specifies a meta6 version greater than 0 that the version strings do not contain a 'v' prefix
 
 The C<meta-ok> takes one optional adverb C<:relaxed-name> that can stop
 the name check being a fail if it is intended to be like that.
 
-There are mechanisms (used internally for testing,) to over-ride the
+There are mechanisms (used internally for testing) to over-ride the
 location or name of the META file and these can be seen in the test-suite,
 though they won't typically be needed.
 
