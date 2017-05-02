@@ -91,7 +91,7 @@ module Test::META:ver<0.0.7>:auth<github:jonathanstowe> {
                     ok check-mandatory($meta), "have all required entries";
                     ok check-provides($meta), "'provides' looks sane";
                     ok check-authors($meta), "Optional 'authors' and not 'author'";
-                    ok check-name($meta, :$relaxed-name), "name has a hypen rather than '::' (if this is intentional please pass :relaxed-name to meta-ok)";
+                    ok check-name($meta, :$relaxed-name), "name has a hyphen rather than '::' (if this is intentional please pass :relaxed-name to meta-ok)";
                     ok $meta.meta6 eq Version.new(0) ?? True !! $seen-vee == 0, "no 'v' in version strings (meta6 version greater than 0)";
                 }
             }
