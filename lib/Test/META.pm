@@ -67,6 +67,10 @@ module Test::META:ver<0.0.7>:auth<github:jonathanstowe> {
     use Test::META::LicenseList;
     our $TESTING = False;
 
+    sub my-diag(Str() $mess) {
+        diag $mess unless $TESTING;
+    }
+
     sub meta-ok(:$relaxed-name) is export(:DEFAULT) {
         subtest {
 
@@ -125,7 +129,7 @@ module Test::META:ver<0.0.7>:auth<github:jonathanstowe> {
                     if not $attr.get_value($meta).defined {
                         my $name = $attr.name.substr(2);
                         $rc = False;
-                        diag "required attribute '$name' is not defined" unless $TESTING;
+                        my-diag "required attribute '$name' is not defined";
                     }
                 }
             }
@@ -139,11 +143,11 @@ module Test::META:ver<0.0.7>:auth<github:jonathanstowe> {
         for $meta.provides.kv -> $name, $path {
             if not dist-dir().child($path).e {
                 $rc = False;
-                diag "file for '$name' '$path' does not exist" unless $TESTING;
+                my-diag "file for '$name' '$path' does not exist";
             }
             elsif $path.IO.is-absolute {
                 $rc = False;
-                diag "file for '$name' '$path' is absolute, it should be relative to the dist directory" unless $TESTING;
+                my-diag "file for '$name' '$path' is absolute, it should be relative to the dist directory";
             }
         }
 
@@ -156,7 +160,7 @@ module Test::META:ver<0.0.7>:auth<github:jonathanstowe> {
         if $meta.author.defined {
             if $meta.authors.elems == 0 {
                 $rc = False;
-                diag "there is an 'author' field rather than the specified 'authors'" unless $TESTING;
+                my-diag "there is an 'author' field rather than the specified 'authors'";
             }
         }
 
@@ -164,28 +168,31 @@ module Test::META:ver<0.0.7>:auth<github:jonathanstowe> {
     }
 
     our sub check-license(META6:D $meta) returns Bool {
+        my Bool $rc = True;
         if $meta.license.defined {
             my @license-list = get-license-list();
             if $meta.license ne any(@license-list) {
                 if $meta.license eq any('NOASSERTION', 'NONE') {
-                    diag "NOTICE! License is $meta.support.license(). This is valid, but licenses are prefered.";
-                    return True;
+                    my-diag "NOTICE! License is $meta.support.license(). This is valid, but licenses are prefered.";
+                    $rc = True;
                 }
                 elsif $meta.support.license {
-                    diag "notice license is “$meta.license()’, which isn't a SPDX standardized identifier, but license URL was supplied";
-                    return True;
+                    my-diag "notice license is “$meta.license()’, which isn't a SPDX standardized identifier, but license URL was supplied";
+                    $rc = True;
                 }
-                diag qq:to/END/;
-                license ‘$meta.license()’ is not one of the standardized SPDX license identifiers.
-                please use use one of the identifiers from https://spdx.org/licenses/
-                for the license field or if your license is not on the list,
-                include a URL to the license text as one of the 'support' keys
-                in addition to listing its name.
-                END
-                return False;
+                else {
+                    my-diag qq:to/END/;
+                    license ‘$meta.license()’ is not one of the standardized SPDX license identifiers.
+                    please use use one of the identifiers from https://spdx.org/licenses/
+                    for the license field or if your license is not on the list,
+                    include a URL to the license text as one of the 'support' keys
+                    in addition to listing its name.
+                    END
+                    $rc = False;
+                }
             }
         }
-        return True;
+        $rc;
     }
 
     our sub check-name(META6:D $meta, :$relaxed-name ) {
