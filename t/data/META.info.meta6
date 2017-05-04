@@ -32,7 +32,7 @@
       "Jonathan Stowe <jns+git@gellyfish.co.uk>"
    ],
    "version" : "0.0.1",
-   "license" : "Artistic",
+   "license" : "Artistic-2.0",
    "resource" : {},
    "superseded-by" : {},
    "description" : "Work with Perl 6 META files",
