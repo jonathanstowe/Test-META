@@ -52,6 +52,7 @@ lives-ok { Test::META::get-meta() }, "get-meta";
     ok Test::META::check-name(META6.new(name => "Test::META")), "check-name with good name";
     nok Test::META::check-name(META6.new(name => "Test-META")), "check-name with bad name";
     ok Test::META::check-name(META6.new(name => "Test-META"), :relaxed-name), "check-name with bad name but :relaxed-name";
+    ok Test::META::check-license(META6.new(license => "Artistic-2.0")), "check-license with good license name";
     nok Test::META::check-license(META6.new(license => "Artistic")), "check-license with bad license name";
     ok Test::META::check-license(META6.new(
         license => "My Super Cool License", support => META6::Support.new(:license('https://mycoollicense.com/license'))
