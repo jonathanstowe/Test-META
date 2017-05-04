@@ -57,7 +57,7 @@ lives-ok { Test::META::get-meta() }, "get-meta";
         license => "My Super Cool License", support => META6::Support.new(:license('https://mycoollicense.com/license'))
         )
 
-    ), "check-license with bad license name";
+    ), "check-license with bad license name - but a URL was supplied";
 }
 
 
