@@ -63,7 +63,7 @@ though they won't typically be needed.
 module Test::META:ver<0.0.9>:auth<github:jonathanstowe> {
 
     use Test;
-    use META6:ver(v0.0.4..*);
+    use META6:ver(v0.0.4+);
     use Test::META::LicenseList;
     our $TESTING = False;
 
