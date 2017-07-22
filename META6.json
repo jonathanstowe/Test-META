@@ -2,6 +2,8 @@
   "name": "Test::META",
   "source-url": "git://github.com/jonathanstowe/Test-META.git",
   "support": {
+	"email" : "jns+git@gellyfish.co.uk",
+	"bugtracker" : "http://github.com/jonathanstowe/Test-META/issue",
     "source": "git://github.com/jonathanstowe/Test-META.git"
   },
   "perl": "6.c",
@@ -30,10 +32,10 @@
     "Test::META": "lib/Test/META.pm",
 	"Test::META::LicenseList": "lib/Test/META/LicenseList.pm"
   },
-  "version": "0.0.9",
+  "version": "0.0.10",
   "authors": [
     "Jonathan Stowe <jns+git@gellyfish.co.uk>"
   ],
   "description": "Test a distributions META file",
-  "meta6": "0"
+  "meta-version": "0"
 }

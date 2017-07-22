@@ -81,9 +81,6 @@ $ zef install Test::META
 $ zef install .
 ```
 
-I haven't tested this with [zef](https://github.com/ugexe/zef) but
-I see no reason why it should not work.
-
 ## Support
 
 Suggestions/patches are welcomed via github at:
@@ -98,6 +95,8 @@ to consider changing that instead.
 
 ## Licence
 
-Please see the [LICENCE](LICENCE)
+This is free software.
 
-© Jonathan Stowe 2015, 2016
+Please see the [LICENCE](LICENCE) for the details.
+
+© Jonathan Stowe 2015, 2016, 2017

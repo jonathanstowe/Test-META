@@ -13,7 +13,7 @@ This is the actual *t/030-my-meta.t* from this distribution
 =begin code
 #!perl6
 
-use v6;
+use v6.c;
 
 use Test;
 use Test::META;
@@ -60,10 +60,10 @@ though they won't typically be needed.
 =end pod
 
 
-module Test::META:ver<0.0.9>:auth<github:jonathanstowe> {
+module Test::META:ver<0.0.10>:auth<github:jonathanstowe> {
 
     use Test;
-    use META6:ver(v0.0.4..*);
+    use META6:ver(v0.0.4+);
     use Test::META::LicenseList;
     our $TESTING = False;
 
