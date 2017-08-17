@@ -48,7 +48,7 @@ checks that:
 
 =item The name attribute doesn't have a hyphen rather than '::'
 
-=item If the META6 file specifies a meta6 version greater than 0 that the version strings do not contain a 'v' prefix
+=item If the META6 file specifies a meta-version version greater than 0 that the version strings do not contain a 'v' prefix
 
 The C<meta-ok> takes one optional adverb C<:relaxed-name> that can stop
 the name check being a fail if it is intended to be like that.
@@ -80,7 +80,7 @@ module Test::META:ver<0.0.10>:auth<github:jonathanstowe> {
                 pass "have a META file";
                 my $meta;
                 my Int $seen-vee = 0;
-                lives-ok { 
+                lives-ok {
                     CONTROL {
                         when CX::Warn {
                             if $_.message ~~ /'prefix "v" seen in version string'/ {
@@ -97,7 +97,8 @@ module Test::META:ver<0.0.10>:auth<github:jonathanstowe> {
                     ok check-authors($meta), "Optional 'authors' and not 'author'";
                     ok check-license($meta), "License is correct";
                     ok check-name($meta, :$relaxed-name), "name has a hypen rather than '::' (if this is intentional please pass :relaxed-name to meta-ok)";
-                    ok $meta.meta6 eq Version.new(0) ?? True !! $seen-vee == 0, "no 'v' in version strings (meta6 version greater than 0)";
+                    # this is transitional as the method changed in META6
+                    ok ($meta.?meta6 | $meta.?meta-version ) ~~ Version.new(0) ?? True !! $seen-vee == 0, "no 'v' in version strings (meta-version greater than 0)";
                 }
             }
             else {
