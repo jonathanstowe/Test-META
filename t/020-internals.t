@@ -61,6 +61,14 @@ lives-ok { Test::META::get-meta() }, "get-meta";
     ), "check-license with bad license name - but a URL was supplied";
 }
 
+subtest {
+    nok Test::META::check-version(META6.new()), "check-version with no version";
+    nok Test::META::check-version(META6.new(version => Version.new("*"))), "check-version with plain '*'";
+    nok Test::META::check-version(META6.new(version => Version.new("1.1.*"))), "check-version with embedded '*'";
+    ok Test::META::check-version(META6.new(version => Version.new('0.0.1'))), "check-version with a good version";
+
+}, "check-version";
+
 
 done-testing;
 # vim: expandtab shiftwidth=4 ft=perl6

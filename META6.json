@@ -32,7 +32,7 @@
     "Test::META": "lib/Test/META.pm",
 	"Test::META::LicenseList": "lib/Test/META/LicenseList.pm"
   },
-  "version": "0.0.11",
+  "version": "0.0.12",
   "authors": [
     "Jonathan Stowe <jns+git@gellyfish.co.uk>"
   ],
