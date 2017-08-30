@@ -69,6 +69,13 @@ subtest {
 
 }, "check-version";
 
+subtest {
+    nok Test::META::check-sources(META6.new(source-url => 'git@github.com:jonathanstowe/Test-META.git')), "not a valid URI";
+    nok Test::META::check-sources(META6.new(source-url => 'git://github.com/jonathanstowe/Test-META')), "git URI must end in git";
+    ok Test::META::check-sources(META6.new(source-url => 'http://xeamplw.com/jonathanstowe/Test-META')), "non-git URI needn't must end in git";
+
+}, "check-sources";
+
 
 done-testing;
 # vim: expandtab shiftwidth=4 ft=perl6

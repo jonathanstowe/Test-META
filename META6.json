@@ -16,7 +16,8 @@
   "auth": "github:jonathanstowe",
   "depends": [
     "Test",
-    "META6"
+    "META6",
+    "URI"
   ],
   "tags": [
     "devel",
@@ -32,7 +33,7 @@
     "Test::META": "lib/Test/META.pm",
 	"Test::META::LicenseList": "lib/Test/META/LicenseList.pm"
   },
-  "version": "0.0.12",
+  "version": "0.0.13",
   "authors": [
     "Jonathan Stowe <jns+git@gellyfish.co.uk>"
   ],

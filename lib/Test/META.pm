@@ -62,11 +62,12 @@ though they won't typically be needed.
 =end pod
 
 
-module Test::META:ver<0.0.12>:auth<github:jonathanstowe> {
+module Test::META:ver<0.0.13>:auth<github:jonathanstowe> {
 
     use Test;
     use META6:ver(v0.0.4+);
     use Test::META::LicenseList;
+    use URI;
     our $TESTING = False;
 
     sub my-diag(Str() $mess) {
@@ -102,6 +103,7 @@ module Test::META:ver<0.0.12>:auth<github:jonathanstowe> {
                     # this is transitional as the method changed in META6
                     ok ($meta.?meta6 | $meta.?meta-version ) ~~ Version.new(0) ?? True !! $seen-vee == 0, "no 'v' in version strings (meta-version greater than 0)";
                     ok check-version($meta), "version is present and doesn't have an asterisk";
+                    ok check-sources($meta), "have usable source";
                 }
             }
             else {
@@ -222,6 +224,30 @@ module Test::META:ver<0.0.12>:auth<github:jonathanstowe> {
 
     our sub check-version(META6:D $meta --> Bool ) {
         $meta.version.defined && not any($meta.version.parts) eq "*"
+    }
+
+    our sub check-sources(META6:D $meta --> Bool ) {
+        my $src-count = 0;
+
+        for ( $meta.source-url, $meta.support.source ).grep(*.defined) -> $source {
+            if try URI.new($source) -> $uri {
+                if $uri.host eq 'github.com' {
+                    if $uri.path ~~ /\.git$/ {
+                        $src-count++;
+                    }
+                    else {
+                        my-diag "github source $source needs to end in .git";
+                    }
+                }
+                else {
+                    $src-count++;
+                }
+            }
+            else {
+                my-diag "source $source is not a valid URI";
+            }
+        }
+        ?$src-count;
     }
 
     sub meta-candidates() {
