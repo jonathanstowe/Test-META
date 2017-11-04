@@ -1,0 +1,26 @@
+v0.0.13		Wed Aug 30 21:06:10 2017 +0100 
+	* Test the source
+v0.0.12		Wed Aug 30 15:28:09 2017 +0100 
+	* Add test for no wildcard version
+v0.0.11		Thu Aug 17 10:35:35 2017 +0100 
+	* Support either meta6 or meta-version
+v0.0.10		Sat Jul 22 12:48:36 2017 +0100 
+	* Fix version matcher in use
+v0.0.9		Thu May 4 20:56:47 2017 +0100 
+	* Test licence
+v0.0.8		Tue Dec 20 07:09:48 2016 +0000 
+	* Fixes for lexical use
+v0.0.7		Thu Aug 4 21:23:39 2016 +0100 
+	* Up version
+v0.0.6		Sun May 1 22:10:55 2016 +0100 
+	* Adjust to new version of META6
+v0.0.5		Tue Apr 26 09:56:28 2016 +0100 
+	* Test on Travis OS/x and Appveyor windows
+v0.0.4		Thu Mar 24 15:16:45 2016 +0000 
+	* Remove reference to "ufo" in README
+v0.0.3		Sun Jan 3 12:56:52 2016 +0000 
+	* Test for no hypen in name Test no v prefix in version literals if meta6 > 0
+v0.0.2		Sat Jan 2 19:23:14 2016 +0000 
+	* Test for absolute paths in provides Test for "author" rather than "authors"
+		 
+	* Add travis
