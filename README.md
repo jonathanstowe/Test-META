@@ -31,15 +31,16 @@ done-testing;
 However, you may want to make this test conditional, only run by the
 author (e.g. by checking the `AUTHOR_TESTING` environment variable). Also,
 regular users of your module will not need Test::META on their system):
+
 ```Perl6
 use v6;
 use lib 'lib';
 use Test;
 plan 1;
 
-constant AUTHOR = ?%*ENV<AUTHOR_TESTING>; 
+constant AUTHOR = ?%*ENV<AUTHOR_TESTING>;
 
-if AUTHOR { 
+if AUTHOR {
     require Test::META <&meta-ok>;
     meta-ok;
     done-testing;
