@@ -51,6 +51,15 @@ else {
 }
 ```
 
+If you are running under Travis CI you can set the right environment
+variable in the YAML. One way to do this is like this:
+
+```
+script:
+  - AUTHOR_TESTING=1 prove -v -e "perl6 -Ilib"
+```
+
+Other continuous integration systems will have a similar facility.
 
 ## Description
 
