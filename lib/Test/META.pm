@@ -116,7 +116,7 @@ module Test::META:ver<0.0.13>:auth<github:jonathanstowe> {
     our sub get-meta() {
         $*META-FILE // do {
             my $meta;
-            for meta-candidates().map({ dist-dir.child($_) }) -> $m {
+            for meta-candidates().map({ dist-dir.add($_) }) -> $m {
                 if $m.e {
                     $meta = $m;
                     last;
@@ -147,7 +147,7 @@ module Test::META:ver<0.0.13>:auth<github:jonathanstowe> {
         my Bool $rc = True;
 
         for $meta.provides.kv -> $name, $path {
-            if not dist-dir().child($path).e {
+            if not dist-dir().add($path).e {
                 $rc = False;
                 my-diag "file for '$name' '$path' does not exist";
             }
