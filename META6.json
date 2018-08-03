@@ -27,6 +27,7 @@
   ],
   "license": "Artistic-2.0",
   "test-depends": [
+    "JSON::Fast",
     "Test"
   ],
   "provides": {
