@@ -3,7 +3,7 @@
   "source-url": "git://github.com/jonathanstowe/Test-META.git",
   "support": {
 	"email" : "jns+git@gellyfish.co.uk",
-	"bugtracker" : "http://github.com/jonathanstowe/Test-META/issue",
+	"bugtracker" : "http://github.com/jonathanstowe/Test-META/issues",
     "source": "git://github.com/jonathanstowe/Test-META.git"
   },
   "perl": "6.c",
