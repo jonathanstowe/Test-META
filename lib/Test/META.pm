@@ -179,11 +179,11 @@ module Test::META:ver<0.0.14>:auth<github:jonathanstowe> {
             my @license-list = get-license-list();
             if $meta.license ne any(@license-list) {
                 if $meta.license eq any('NOASSERTION', 'NONE') {
-                    my-diag "NOTICE! License is $meta.support.license(). This is valid, but licenses are prefered.";
+                    my-diag "NOTICE! License is $meta.license(). This is valid, but licenses are prefered.";
                     $rc = True;
                 }
                 elsif $meta.support.license {
-                    my-diag "notice license is “$meta.license()’, which isn't a SPDX standardized identifier, but license URL was supplied";
+                    my-diag "notice license is “$meta.support.license()’, which isn't a SPDX standardized identifier, but license URL was supplied";
                     $rc = True;
                 }
                 else {
