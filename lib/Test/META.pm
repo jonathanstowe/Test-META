@@ -99,7 +99,7 @@ module Test::META:ver<0.0.14>:auth<github:jonathanstowe> {
                     ok check-provides($meta), "'provides' looks sane";
                     ok check-authors($meta), "Optional 'authors' and not 'author'";
                     ok check-license($meta), "License is correct";
-                    ok check-name($meta, :$relaxed-name), "name has a hyphen rather than '::' (if this is intentional please pass :relaxed-name to meta-ok)";
+                    ok check-name($meta, :$relaxed-name), "name has a '::' rather than a hyphen (if this is intentional please pass :relaxed-name to meta-ok)";
                     # this is transitional as the method changed in META6
                     ok ($meta.?meta6 | $meta.?meta-version ) ~~ Version.new(0) ?? True !! $seen-vee == 0, "no 'v' in version strings (meta-version greater than 0)";
                     ok check-version($meta), "version is present and doesn't have an asterisk";

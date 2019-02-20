@@ -31,15 +31,16 @@ done-testing;
 However, you may want to make this test conditional, only run by the
 author (e.g. by checking the `AUTHOR_TESTING` environment variable). Also,
 regular users of your module will not need Test::META on their system):
+
 ```Perl6
 use v6;
 use lib 'lib';
 use Test;
 plan 1;
 
-constant AUTHOR = ?%*ENV<AUTHOR_TESTING>; 
+constant AUTHOR = ?%*ENV<AUTHOR_TESTING>;
 
-if AUTHOR { 
+if AUTHOR {
     require Test::META <&meta-ok>;
     meta-ok;
     done-testing;
@@ -50,6 +51,15 @@ else {
 }
 ```
 
+If you are running under Travis CI you can set the right environment
+variable in the YAML. One way to do this is like this:
+
+```
+script:
+  - AUTHOR_TESTING=1 prove -v -e "perl6 -Ilib"
+```
+
+Other continuous integration systems will have a similar facility.
 
 ## Description
 
