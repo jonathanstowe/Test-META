@@ -1,0 +1,73 @@
+{
+  "type": "layout",
+  "children": [
+    {
+      "purpose": null,
+      "name": "t",
+      "type": "directory",
+      "children": [
+        {
+          "purpose": null,
+          "name": "data",
+          "children": [
+            {
+              "name": "META.info.meta6",
+              "type": "file"
+            }
+          ],
+          "type": "directory"
+        },
+        {
+          "type": "file",
+          "name": "030-my-meta.t"
+        },
+        {
+          "name": "020-internals.t",
+          "type": "file"
+        },
+        {
+          "type": "file",
+          "name": "010-use.t"
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file"
+    },
+    {
+      "name": "lib",
+      "type": "directory",
+      "children": [
+        {
+          "purpose": null,
+          "name": "Test",
+          "type": "directory",
+          "children": [
+            {
+              "name": "META.pm",
+              "type": "file"
+            }
+          ]
+        }
+      ],
+      "purpose": null
+    },
+    {
+      "type": "file",
+      "name": "META6.json"
+    },
+    {
+      "type": "file",
+      "name": "appveyor.yml"
+    },
+    {
+      "type": "file",
+      "name": "Changes"
+    },
+    {
+      "name": "LICENCE",
+      "type": "file"
+    }
+  ]
+}
