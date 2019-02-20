@@ -9,7 +9,7 @@
 	"bugtracker" : "http://github.com/jonathanstowe/Test-META/issues",
     "source": "https://github.com/jonathanstowe/Test-META.git"
   },
-  "perl": "6.c",
+  "perl": "6.*",
   "resources": [ ],
   "build-depends": [ ],
   "depends": [
