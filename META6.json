@@ -1,19 +1,17 @@
 {
   "name": "Test::META",
-  "source-url": "git://github.com/jonathanstowe/Test-META.git",
+  "version": "0.0.15",
+  "auth": "github:jonathanstowe",
+  "api": "1.0",
+  "source-url": "https://github.com/jonathanstowe/Test-META.git",
   "support": {
 	"email" : "jns+git@gellyfish.co.uk",
 	"bugtracker" : "http://github.com/jonathanstowe/Test-META/issues",
-    "source": "git://github.com/jonathanstowe/Test-META.git"
+    "source": "https://github.com/jonathanstowe/Test-META.git"
   },
   "perl": "6.c",
-  "resources": [
-    
-  ],
-  "build-depends": [
-    
-  ],
-  "auth": "github:jonathanstowe",
+  "resources": [ ],
+  "build-depends": [ ],
   "depends": [
     "Test",
     "META6",
@@ -33,7 +31,6 @@
   "provides": {
     "Test::META": "lib/Test/META.pm"
   },
-  "version": "0.0.14",
   "authors": [
     "Jonathan Stowe <jns+git@gellyfish.co.uk>"
   ],
