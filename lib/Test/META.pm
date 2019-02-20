@@ -66,7 +66,7 @@ module Test::META:ver<0.0.14>:auth<github:jonathanstowe> {
 
     use Test;
     use META6:ver(v0.0.4+);
-    use Test::META::LicenseList;
+    use License::SPDX;
     use URI;
     our $TESTING = False;
 
@@ -176,8 +176,9 @@ module Test::META:ver<0.0.14>:auth<github:jonathanstowe> {
     our sub check-license(META6:D $meta --> Bool) {
         my Bool $rc = True;
         if $meta.license.defined {
-            my @license-list = get-license-list();
-            if $meta.license ne any(@license-list) {
+            my $licence-list = License::SPDX.new;
+            my $licence = $licence-list.get-license($meta.license );
+            if !$licence.defined  {
                 if $meta.license eq any('NOASSERTION', 'NONE') {
                     my-diag "NOTICE! License is $meta.license(). This is valid, but licenses are prefered.";
                     $rc = True;
@@ -196,6 +197,11 @@ module Test::META:ver<0.0.14>:auth<github:jonathanstowe> {
                     END
                     $rc = False;
                 }
+            }
+            elsif $licence.is-deprecated-license {
+                my-diag qq:to/END/;
+                the licence ‘$meta.license()’ is valid but deprecated, you may want to use another license.
+                END
             }
         }
         $rc;

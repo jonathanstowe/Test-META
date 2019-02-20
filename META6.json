@@ -17,7 +17,8 @@
   "depends": [
     "Test",
     "META6",
-    "URI"
+    "URI",
+    "License::SPDX"
   ],
   "tags": [
     "devel",
@@ -30,13 +31,12 @@
     "Test"
   ],
   "provides": {
-    "Test::META": "lib/Test/META.pm",
-	"Test::META::LicenseList": "lib/Test/META/LicenseList.pm"
+    "Test::META": "lib/Test/META.pm"
   },
   "version": "0.0.14",
   "authors": [
     "Jonathan Stowe <jns+git@gellyfish.co.uk>"
   ],
   "description": "Test a distributions META file",
-  "meta-version": "0"
+  "meta-version": "1"
 }
