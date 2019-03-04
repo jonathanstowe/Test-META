@@ -7,6 +7,7 @@ os:
   - osx
 
 perl6:
+  - 2018.04
   - latest
 
 install:

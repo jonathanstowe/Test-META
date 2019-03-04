@@ -1,6 +1,6 @@
 {
   "name": "Test::META",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "auth": "github:jonathanstowe",
   "api": "1.0",
   "source-url": "https://github.com/jonathanstowe/Test-META.git",
