@@ -238,11 +238,11 @@ module Test::META:ver<0.0.16>:auth<github:jonathanstowe> {
         for ( $meta.source-url, $meta.support.source ).grep(*.defined) -> $source {
             if try URI.new($source) -> $uri {
                 if $uri.host eq 'github.com' {
-                    if $uri.path ~~ /\.git$/ {
+                    if $uri.path ~~ /\.git$/ | /'/archive/' .+? [ '.tar.gz' | '.zip' ] $/ {
                         $src-count++;
                     }
                     else {
-                        my-diag "github source $source needs to end in .git";
+                        my-diag "github source $source needs to end in .git or be a proper release.";
                     }
                 }
                 else {
