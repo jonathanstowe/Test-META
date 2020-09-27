@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/jonathanstowe/Test-META.svg?branch=master)](https://travis-ci.org/jonathanstowe/Test-META)
 [![Build status](https://ci.appveyor.com/api/projects/status/github/jonathanstowe/Test-META?svg=true)](https://ci.appveyor.com/project/jonathanstowe/Test-META/branch/master)
 
-Test that a Perl 6 project has a good and proper META file.
+Test that a Raku project has a good and proper META file.
 
 ## Synopsis
 
@@ -73,7 +73,7 @@ checks that:
    *  The META file (either META6.json or META.info) exists
    *  That the META file can be parsed as valid JSON
    *  That the attributes marked as "mandatory" are present
-   *  That the files mention in the "provides" section are present.
+   *  That the files mentioned in the "provides" section are present.
 
 There are mechanisms that are used internally for testing to override the
 location or name of the META file. These can be seen in the test suite
