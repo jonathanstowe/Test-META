@@ -108,4 +108,4 @@ This is free software.
 
 Please see the [LICENCE](LICENCE) for the details.
 
-© Jonathan Stowe 2015, 2016, 2017
+© Jonathan Stowe 2015 - 2021
