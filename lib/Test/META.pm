@@ -4,14 +4,14 @@ use v6;
 
 =head1 NAME
 
-Test::META - Test that a Perl 6 project has a good and proper META file
+Test::META - Test that a Raku project has a good and proper META file
 
 =head1 SYNOPSIS
 
 This is the actual *t/030-my-meta.t* from this distribution
 
 =begin code
-#!perl6
+#!raku
 
 use v6.c;
 
@@ -31,7 +31,7 @@ done-testing;
 
 This provides a simple mechanism for module authors to have some
 confidence that they have a working distribution META description
-file (as described in L<http://design.perl6.org/S22.html#META6.json>.)
+file (as described in L<http://design.raku.org/S22.html#META6.json>.)
 
 It exports one subroutine *meta-ok* that runs a single sub-test that
 checks that:
@@ -62,10 +62,10 @@ though they won't typically be needed.
 =end pod
 
 
-module Test::META:ver<0.0.16>:auth<github:jonathanstowe> {
+module Test::META:ver<0.0.17>:auth<github:jonathanstowe> {
 
     use Test;
-    use META6:ver(v0.0.4+);
+    use META6:ver(v0.0.24+);
     use License::SPDX;
     use URI;
     our $TESTING = False;
@@ -269,4 +269,4 @@ module Test::META:ver<0.0.16>:auth<github:jonathanstowe> {
     }
 }
 
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab shiftwidth=4 ft=raku

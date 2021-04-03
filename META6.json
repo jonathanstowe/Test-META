@@ -1,6 +1,6 @@
 {
   "name": "Test::META",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "auth": "github:jonathanstowe",
   "api": "1.0",
   "source-url": "https://github.com/jonathanstowe/Test-META.git",
@@ -10,11 +10,12 @@
     "source": "https://github.com/jonathanstowe/Test-META.git"
   },
   "perl": "6.*",
+  "raku": "6.*",
   "resources": [ ],
   "build-depends": [ ],
   "depends": [
     "Test",
-    "META6",
+    "META6:ver<0.0.24+>",
     "URI",
     "License::SPDX"
   ],

@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macOS-latest
+          - windows-latest
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: Raku/setup-raku@v1
+
+    - name: Raku version
+      run: raku -v
+
+    - name: Install dependencies
+      run: zef install --deps-only --/test --test-depends .
+
+    - name: Run tests
+      run: zef test -v --debug .

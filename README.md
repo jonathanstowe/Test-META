@@ -10,7 +10,7 @@ Test that a Raku project has a good and proper META file.
 This is the actual `t/030-my-meta.t` from this distribution
 
 ```Perl6
-#!perl6
+#!raku
 
 use v6;
 use lib 'lib';
@@ -56,7 +56,7 @@ variable in the YAML. One way to do this is like this:
 
 ```
 script:
-  - AUTHOR_TESTING=1 prove -v -e "perl6 -Ilib"
+  - AUTHOR_TESTING=1 prove -v -e "raku -Ilib"
 ```
 
 Other continuous integration systems will have a similar facility.
@@ -65,7 +65,7 @@ Other continuous integration systems will have a similar facility.
 
 This provides a simple mechanism for module authors to have some
 confidence that they have a working distribution META description
-file (as described in [S22](http://design.perl6.org/S22.html#META6.json)).
+file (as described in [S22](http://design.raku.org/S22.html#META6.json)).
 
 It exports one subroutine `meta-ok` that runs a single sub-test that
 checks that:
