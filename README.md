@@ -1,9 +1,8 @@
 # Test::META
 
-[![Build Status](https://travis-ci.org/jonathanstowe/Test-META.svg?branch=master)](https://travis-ci.org/jonathanstowe/Test-META)
-[![Build status](https://ci.appveyor.com/api/projects/status/github/jonathanstowe/Test-META?svg=true)](https://ci.appveyor.com/project/jonathanstowe/Test-META/branch/master)
-
 Test that a Raku project has a good and proper META file.
+
+[![CI](https://github.com/jonathanstowe/Test-META/actions/workflows/main.yml/badge.svg)](https://github.com/jonathanstowe/Test-META/actions/workflows/main.yml)
 
 ## Synopsis
 
