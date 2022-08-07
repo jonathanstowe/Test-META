@@ -8,7 +8,7 @@
   "name": "Test::META",
   "description": "Test a distributions META file",
   "source-url": "https://github.com/jonathanstowe/Test-META.git",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "raku": "6.*",
   "resources": [
   ],
