@@ -1,23 +1,16 @@
 {
+  "test-depends": [
+    "Test"
+  ],
+  "build-depends": [
+  ],
+  "meta-version": "1",
   "name": "Test::META",
-  "version": "0.0.17",
-  "auth": "github:jonathanstowe",
-  "api": "1.0",
+  "description": "Test a distributions META file",
   "source-url": "https://github.com/jonathanstowe/Test-META.git",
-  "support": {
-	"email" : "jns+git@gellyfish.co.uk",
-	"bugtracker" : "http://github.com/jonathanstowe/Test-META/issues",
-    "source": "https://github.com/jonathanstowe/Test-META.git"
-  },
-  "perl": "6.*",
+  "version": "0.0.18",
   "raku": "6.*",
-  "resources": [ ],
-  "build-depends": [ ],
-  "depends": [
-    "Test",
-    "META6:ver<0.0.24+>",
-    "URI",
-    "License::SPDX"
+  "resources": [
   ],
   "tags": [
     "devel",
@@ -25,16 +18,24 @@
     "utils",
     "testing"
   ],
-  "license": "Artistic-2.0",
-  "test-depends": [
-    "Test"
-  ],
   "provides": {
     "Test::META": "lib/Test/META.pm"
   },
+  "support": {
+    "source": "https://github.com/jonathanstowe/Test-META.git",
+    "email": "jns+git@gellyfish.co.uk",
+    "bugtracker": "http://github.com/jonathanstowe/Test-META/issues"
+  },
+  "depends": [
+    "Test",
+    "META6:ver<0.0.24+>",
+    "URI",
+    "License::SPDX"
+  ],
+  "auth": "zef:jonathanstowe",
+  "license": "Artistic-2.0",
+  "api": "1.0",
   "authors": [
     "Jonathan Stowe <jns+git@gellyfish.co.uk>"
-  ],
-  "description": "Test a distributions META file",
-  "meta-version": "1"
+  ]
 }
