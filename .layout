@@ -45,7 +45,7 @@
           "type": "directory",
           "children": [
             {
-              "name": "META.pm",
+              "name": "META.rakumod",
               "type": "file"
             }
           ]
